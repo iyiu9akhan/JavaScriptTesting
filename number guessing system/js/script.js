@@ -28,6 +28,7 @@ box_two.style.display = "none";
 const result_box = document.querySelector("#result_box");
 result_box.style.display = "none";
 const result = document.querySelector(".result");
+const attempt_msg = document.querySelector(".attempt_msg");
 
 // registration btn function starts here
 register_btn.addEventListener("click", function () {
@@ -69,6 +70,7 @@ push_data_one.addEventListener("click", function () {
 // set number btn function ends here
 
 // guess number btn function starts here
+let attempts = 3;
 push_data_two.addEventListener("click", function () {
   if (inputBox_two.value == "") {
     error_two.innerHTML = "guess a number!";
@@ -76,12 +78,25 @@ push_data_two.addEventListener("click", function () {
     error_two.innerHTML = "guess a number between 1 - 12";
   } else {
     error_two.innerHTML = "";
-    result_box.style.display = "block";
-    box_two.style.display = "none";
-    if (inputBox_one.value !== inputBox_two.value) {
-      result.innerHTML = `Congratulations, ${register_input1.value}! 🚀`;
-    } else {
+    if (inputBox_one.value == inputBox_two.value ) {
       result.innerHTML = `Congratulations, ${register_input2.value}! 🚀`;
+      box_two.style.display = "none";
+      result_box.style.display = "block";
+      
+    } 
+    else if ( attempts <=3 && attempts >=1){
+      // console.log("pass");
+      // attempt_msg.innerHTML="";
+      attempts--
+      attempt_msg.innerHTML= `${attempts} attempts left !`;
+      
+    }
+    else {
+      if(attempts = 0){
+
+        result.innerHTML = `Congratulations, ${register_input1.value}! 🚀`;
+      }
+      
     }
   }
 });
