@@ -78,25 +78,19 @@ push_data_two.addEventListener("click", function () {
     error_two.innerHTML = "guess a number between 1 - 12";
   } else {
     error_two.innerHTML = "";
-    if (inputBox_one.value == inputBox_two.value ) {
+    if (inputBox_one.value == inputBox_two.value) {
       result.innerHTML = `Congratulations, ${register_input2.value}! 🚀`;
       box_two.style.display = "none";
       result_box.style.display = "block";
-      
-    } 
-    else if ( attempts <=3 && attempts >=1){
-      // console.log("pass");
-      // attempt_msg.innerHTML="";
-      attempts--
-      attempt_msg.innerHTML= `${attempts} attempts left !`;
-      
-    }
-    else {
-      if(attempts = 0){
-
+    } else if (attempts <= 3 && attempts >= 2 || inputBox_one.value > 12 || inputBox_one.value < 1) {
+      attempts--;
+      attempt_msg.innerHTML = `${attempts} attempts left !`;
+    } else {
+      if (attempts == 1) {
+        box_two.style.display = "none";
+        result_box.style.display = "block";
         result.innerHTML = `Congratulations, ${register_input1.value}! 🚀`;
       }
-      
     }
   }
 });
