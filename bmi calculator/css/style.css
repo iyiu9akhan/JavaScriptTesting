@@ -60,6 +60,9 @@ body {
   font-weight: 500;
   font-size: 15px;
 }
+#container .middle .input_box {
+  display: flex;
+}
 #container .middle input:focus {
   outline: none;
 }
@@ -88,4 +91,28 @@ body {
   color: #015fa4;
   background-color: #b5e7a0;
   cursor: pointer;
+}
+#container .middle .error_sign {
+  color: #ee4444;
+  font-size: 28px;
+  font-weight: 900;
+  margin-left: 10px;
+}
+#container .middle .error_sign1,
+#container .middle .error_sign2,
+#container .middle .error_sign3,
+#container .middle .error_sign4,
+#container .middle .error_sign5 {
+  color: #ee4444;
+  font-size: 28px;
+  font-weight: 900;
+  margin-left: 10px;
+}
+#container .error_text {
+  color: #ee4444;
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: capitalize;
+  margin-bottom: 10px;
+  text-align: center;
 }
