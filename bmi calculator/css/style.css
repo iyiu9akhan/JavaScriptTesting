@@ -12,11 +12,13 @@ body {
 
 #container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 950px;
 }
-#container .view_portion {
+#container .view_portion,
+.result_portion {
   width: 375px;
   height: 800px;
   background-color: #015fa4;
@@ -32,6 +34,7 @@ body {
   text-align: center;
   font-size: 35px;
 }
+
 #container .top p {
   color: #d5f4e6;
   text-align: justify;
@@ -115,4 +118,17 @@ body {
   text-transform: capitalize;
   margin-bottom: 10px;
   text-align: center;
+}
+#container .result_portion .top h1 {
+  color: #d5f4e6;
+  text-transform: capitalize;
+  text-align: center;
+  font-size: 30px;
+}
+#container .result_portion .result{
+    width: 100%;
+    height: 350px;
+    background-color: #d5f4e6;
+    border-radius: 12px;
+    margin-top: 20px;
 }
