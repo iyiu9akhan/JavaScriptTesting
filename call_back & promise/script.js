@@ -10,7 +10,7 @@ sum(2,3) //sum func call test
 
 console.log("1950");
 // async way
-
+ 
  
 function sum(a, b) {
   var result = a + b;
