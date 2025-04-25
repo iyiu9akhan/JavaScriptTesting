@@ -1,0 +1,23 @@
+#counter{
+    background-color: #000000;
+    width: 500px;
+    height: 200px;
+    border-radius: 20px;
+    text-align: center;
+    position: relative;
+    align-content: center;
+}
+#counter .digit{
+    color: #ffffff;
+    font-size: 60px;
+}
+#counter .button{
+    height: 40px;
+    width: 200px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 20px;
+    cursor: pointer;
+}
