@@ -22,14 +22,35 @@ import "./App.css";
 //   );
 // }
 
-function info() {
+function Info() {
+  const [details, setDetails] = useState([]);
+  const [visibleCount, setVisibleCount] = useState(5);
+
   useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/todos")
-    .then((active) => active.json())
-    .then((info)=>console.log(info, "info")
-    )
+    fetch("https://jsonplaceholder.typicode.com/posts")
+      .then((active) => active.json())
+      .then((info) => setDetails(info));
   }, []);
+
+  const loadMore = () => {
+    setVisibleCount((prev) => prev + 5);
+  };
+
+  return (
+    <div>
+      {details.slice(0, visibleCount).map((item) => (
+        <ul key={item.id}>
+          <li>{item.title}</li>
+        </ul>
+      ))}
+
+      {visibleCount < details.length && (
+        <button onClick={loadMore}>Load More</button>
+      )}
+    </div>
+  );
 }
 
+export default Info;
+
 // export default counter;
-export default info;
