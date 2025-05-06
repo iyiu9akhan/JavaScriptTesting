@@ -35,19 +35,22 @@ function Info() {
   const loadMore = () => {
     setVisibleCount((prev) => prev + 5);
   };
-
+  const handleClick = (id) => {
+    alert(`You clicked on item ID: ${id}`);
+  };
   return (
     <div>
-      {details.slice(0, visibleCount).map((item) => (
-        <ul key={item.id}>
-          <li>{item.title}</li>
-        </ul>
-      ))}
+    {details.slice(0, visibleCount).map((item) => (
+      <div key={item.id}>
+        <p>{item.title}</p>
+        <button onClick={() => handleClick(item.id)}>Click Me</button>
+      </div>
+    ))}
 
-      {visibleCount < details.length && (
-        <button onClick={loadMore}>Load More</button>
-      )}
-    </div>
+    {visibleCount < details.length && (
+      <button onClick={loadMore} className="load-more">Load More</button>
+    )}
+  </div>
   );
 }
 
